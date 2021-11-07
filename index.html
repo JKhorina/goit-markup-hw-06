@@ -421,6 +421,42 @@
                         <use href="./images/sprite.svg#icon-close"></use>
                     </svg>
                 </button>
+
+                <form action="#" class="form modal-form">
+                    <p class="modal-form-head">Оставьте свои данные, мы вам перезвоним</p>
+                    <label class="modal-form-field" for=""
+                        >Имя
+                        <span class="modal-form-wraper">
+                            <input class="modal-form-input" type="text" name="user-name"/>
+                            <svg class="modal-user-icon">
+                                <use href="./images/sprite.svg#icon-name-modal-field"></use>
+                            </svg>
+                        </span>
+                    </label>
+                    <label class="modal-form-field" for=""
+                    >Телефон
+                        <span class="modal-form-wraper">
+                            <input class="modal-form-input" type="tel" name="user-tel"/>
+                            <svg class="modal-tel-icon">
+                                <use href="./images/sprite.svg#icon-phone-modal-field"></use>
+                            </svg>
+                        </span>
+                    </label>
+                    <label class="modal-form-field" for=""
+                    >Почта
+                        <span class="modal-form-wrapper">
+                            <input class="modal-form-input" type="email" name="user-email"/>
+                            <svg class="modal-email-icon">
+                                <use href="./images/sprite.svg#icon-email-modal-field"></use>
+                            </svg>
+                        </span>
+                    </label>
+                    <label class="modal-form-field" for=""
+                    >Комментарий
+                        <textarea class="modal-form-message" name="user-message"></textarea>
+                    </label>
+                    <button class="model-form-button btn" type="submit">Отправить</button>
+                </form>
             </div>
         </div>
         <script src="./js/modal.js"></script>
