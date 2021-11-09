@@ -787,14 +787,20 @@ body {
     background-color: var(--accent-color);
 }
 
-/* .footer-email-form {
+.footer-email-form {
+    margin-right: auto;
     display: flex;
+    flex-direction: column;
     
-} */
+}
+
+.footer-form {
+    margin-left: auto;
+}
 
 .email-form-box {
-    display: inline;
-    
+    display: flex;
+    align-items: baseline;
 }
 
 .footer-email-form-text{
@@ -814,6 +820,7 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.15));
     background-color: inherit;
+    color: var(--secondary-text-color);
     border-radius: 4px;
     margin-right: 12px;
 }
@@ -873,7 +880,6 @@ body {
 .modal-button {
     background: #FFFFFF;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    box-sizing: border-box;
     width: 30px;
     height: 30px;
     border-radius: 50%;
@@ -883,11 +889,20 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition-property: color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-close-icon {
     width: 18px;
     height: 18px;
+    fill: currentColor;
+}
+
+.modal-button:hover, 
+.modal-button:focus {
+    color: var(--accent-color);
 }
 
 .backdrop.is-hidden {
@@ -937,6 +952,19 @@ body {
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
     padding-left: 12px;
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-input:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    padding-left: 42px;
+}
+
+.modal-form-input:focus + .modal-form-icon {
+    fill: var(--accent-color);
 }
 
 .modal-form-message {
@@ -947,36 +975,37 @@ body {
     margin-top: 4px;
     padding: 12px 16px;
     resize: none;
+    transition-property: border-color;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-user-icon {
+.modal-form-message:focus {
+    outline: none;
+    border-color: var(--accent-color);
+}
+
+.modal-form-message::placeholder {
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.01em;
+    color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-form-icon {
     width: 18px;
     height: 18px;
     fill: var(--special-icon-color);
     position: absolute;
-    top: 0;
-    left: 0;
+    top:50%;
+    transform: translateY(-50%);
+    left: 12px;
+    transition-property: fill;
+    transition-duration: 250ms;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-tel-icon {
-    width: 18px;
-    height: 18px;
-    fill: var(--special-icon-color);
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.modal-email-icon {
-    width: 18px;
-    height: 18px;
-    fill: var(--special-icon-color);
-    position: absolute;
-    top: 0;
-    left: 0;
-}
-
-.model-form-button {
+.modal-form-button {
     align-self: center;
     width: 200px;
     height: 50px;
@@ -993,7 +1022,50 @@ body {
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.model-form-button:hover,
-.model-form-button:focus {
+.modal-form-button:hover,
+.modal-form-button:focus {
     background-color: var(--button-hero-hover-color);
+}
+
+.accept-agreement-label {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    color: var(--primary-text-color);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.accept-agreement-label::before {
+    display: block;
+    content: '';
+    margin-right: 7px;
+    width: 16px;
+    height: 15px;
+    border: 1px solid var(--special-icon-color);
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.modal-form-checkbox:checked + .accept-agreement-label::before {
+    background-image: url(../images/icon-check.svg);
+    background-repeat: no-repeat;
+    background-position: center;
+    border: none;
+}
+
+.modal-form-checkbox:focus + .accept-agreement-label::before{
+    border: 1px solid var(--accent-color);
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.accept-agreement-link {
+    font-size: 14px;
+    line-height: 1.71;
+    letter-spacing: 0.03em;
+    text-decoration-line: underline;
+    color: var(--accent-color);
 }
