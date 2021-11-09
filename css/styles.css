@@ -705,6 +705,7 @@ body {
 .footer-container {
     display: flex;
     align-items: baseline;
+    justify-content: space-between;
 }
 
 .footer-contact {
@@ -788,10 +789,8 @@ body {
 }
 
 .footer-email-form {
-    margin-right: auto;
     display: flex;
-    flex-direction: column;
-    
+    flex-direction: column;   
 }
 
 .footer-form {
@@ -801,6 +800,7 @@ body {
 .email-form-box {
     display: flex;
     align-items: baseline;
+    
 }
 
 .footer-email-form-text{
@@ -818,7 +818,7 @@ body {
     min-height: 50px;
     padding-left: 16px;
     border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: (0px 4px 4px rgba(0, 0, 0, 0.15));
+    box-shadow: (0px 4px 4px rgba(32, 5, 5, 0.15));
     background-color: inherit;
     color: var(--secondary-text-color);
     border-radius: 4px;
@@ -951,7 +951,7 @@ body {
     min-height: 40px;
     border: 1px solid rgba(33, 33, 33, 0.2);
     border-radius: 4px;
-    padding-left: 12px;
+    padding-left: 42px;
     transition-property: border-color;
     transition-duration: 250ms;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
